@@ -38,8 +38,6 @@
 
 				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1100 );
 
-				controls = new DeviceOrientationControls( camera );
-
 				scene = new THREE.Scene();
 
 				var geometry = new THREE.SphereBufferGeometry( 500, 60, 40 );
@@ -65,10 +63,11 @@
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
 
+				controls = new DeviceOrientationControls( camera, renderer.domElement );
+
 				//
 
 				window.addEventListener( 'resize', onWindowResize, false );
-
 
 			}
 

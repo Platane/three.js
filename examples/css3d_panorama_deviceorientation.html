@@ -37,8 +37,6 @@
 
 				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
 
-				controls = new DeviceOrientationControls( camera );
-
 				scene = new THREE.Scene();
 
 				var sides = [
@@ -95,6 +93,8 @@
 				renderer = new CSS3DRenderer();
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
+
+				controls = new DeviceOrientationControls( camera, renderer.domElement );
 
 				//
 

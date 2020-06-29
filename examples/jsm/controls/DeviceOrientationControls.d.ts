@@ -4,9 +4,10 @@ import {
 
 export class DeviceOrientationControls {
 
-	constructor( object: Camera );
+	constructor( object: Camera, domElement?: HTMLElement );
 
 	object: Camera;
+	domElement?: HTMLElement
 
 	// API
 
@@ -14,6 +15,12 @@ export class DeviceOrientationControls {
 	deviceOrientation: any;
 	enabled: boolean;
 	screenOrientation: number;
+	offsetRotateEnabled: boolean;
+	offsetRotateSpeed: number;
+	offsetRotatePhi :number;
+	offsetRotateTheta :number;
+	minPolarAngle :number;
+	maxPolarAngle :number;
 
 	connect(): void;
 	disconnect(): void;
